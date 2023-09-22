@@ -1,10 +1,25 @@
 .sidebar__compose { 
     margin-top: 15px !important;
+    margin-bottom: 15px !important;
     text-transform: capitalize !important;
-    color: white !important;
+    color: black !important;
     padding: 15px !important;
     margin-left: 10px !important;
     border-radius: 15px !important;
-    background-color: rgb(145, 189, 240) !important;
-    
+    background-color: #c2e7ff !important;
+    width: 140px;
+    font-weight: 500;  
+}
+.sidebar__footerLabel { 
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    padding: 15px;
+    margin-left: 10px;
+    justify-content: space-between;
+    font-size: medium;
+    color: gray;
+}
+.sidebar__footerLabel > h4 { 
+    color: black;
 }

@@ -1,10 +1,15 @@
 import React from 'react'
 import './Sidebar.css'
-import { Button } from '@mui/material';
+import { Button, IconButton } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import InboxIcon from '@mui/icons-material/Inbox';
 import SidebarOption from '../components/SidebarOption';
-
+import StarOutlineIcon from '@mui/icons-material/StarOutline';
+import LabelImportantIcon from '@mui/icons-material/LabelImportant';
+import SendSharpIcon from '@mui/icons-material/SendSharp';
+import DescriptionSharpIcon from '@mui/icons-material/DescriptionSharp';
+import ExpandMoreSharpIcon from '@mui/icons-material/ExpandMoreSharp';
+import AddSharpIcon from '@mui/icons-material/AddSharp';
 function Sidebar() {
   return (
     <div className='sidebar'>
@@ -12,8 +17,22 @@ function Sidebar() {
         className='sidebar__compose' >
         Compose        
         </Button>
-        <SidebarOption Icon={InboxIcon} title="Inbox" number={50} />
+        <SidebarOption Icon={InboxIcon} title="Inbox" number={50} selected={true}/>
+        <SidebarOption Icon={StarOutlineIcon} title="Starred" number={40} />
+        <SidebarOption Icon={LabelImportantIcon} title="Important" number={42} />
+        <SidebarOption Icon={SendSharpIcon} title="Sent" number={12} />
+        <SidebarOption Icon={DescriptionSharpIcon} title="Drafts" number={5} />
+        <SidebarOption Icon={ExpandMoreSharpIcon} title="More" number={null} />
+        <div className='sidebar__footer'>
+            <div className='sidebar__footerLabel'>
+            <h4>Labels</h4>
+            <IconButton>
+            <AddSharpIcon />
+            </IconButton>
+            </div>
+        </div>
     </div>
+
   )
 }
 export default Sidebar
