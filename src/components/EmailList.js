@@ -51,11 +51,11 @@ function EmailList() {
         </div>
         
         <div className='emailList__sections'>
-            <Section Icon={InboxIcon} title="Inbox" selected={true} color="#0b57d0"/>
-            <Section Icon={LocalOfferIcon} title="Promotions"  color="#0b57d0"selected />
-            <Section Icon={PeopleIcon} title="Social" color="#0b57d0" selected />
-            <Section Icon={InfoIcon} title="Updates" color="green"  selected />
-            <Section Icon={ForumIcon} title="Forums" color="yellow"  selected />
+            <Section Icon={InboxIcon} title="Inbox" selected={true} />
+            <Section Icon={LocalOfferIcon} title="Promotions"  selected />
+            <Section Icon={PeopleIcon} title="Social" selected />
+            <Section Icon={InfoIcon} title="Updates"   selected />
+            <Section Icon={ForumIcon} title="Forums"   selected />
         </div>
     </div>
   )

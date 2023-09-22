@@ -5,7 +5,7 @@ function Section({Icon, title, color, selected}) {
   return (
     <div className={`section ${selected && "section--active"}`} 
     style={{
-        borderBottom: `3px solid ${color}`, color: `${selected && color}`}}>
+        borderBottom: `3px solid "#0b57d0"`}}>
 
         <Icon />
         <h4>{title}</h4>
