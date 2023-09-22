@@ -32,7 +32,7 @@ display: inline;
 .sidebarOption:hover > p
  { 
     background-color: #f2f2f2;
-    font-weight: 800 !important;
+    font-weight: 600 !important;
 }
 .sidebarOption--active > p {
     display: inline !important;
@@ -41,5 +41,5 @@ display: inline;
 .sidebarOption--active > p,
 .sidebarOption--active > h3 {
     background-color: #a8c7fa;
-    font-weight: 800 !important;
+    font-weight: 600 !important;
 }
