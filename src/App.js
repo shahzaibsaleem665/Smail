@@ -10,7 +10,7 @@ import {
   
 } from "react-router-dom";
 import Mail from './components/Mail';
-import EmailList from './components/EmailList';
+import EmailList from './pages/EmailList';
 
 function App() {
   return (

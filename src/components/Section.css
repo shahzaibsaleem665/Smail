@@ -16,13 +16,16 @@
     border-width: 0 !important;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    
 
 }
 .section > .MuiSvgIcon-root { 
     font-size: medium;
     padding-right: 10px;
+    color: gray;
 }
 .section:hover { 
     background: whitesmoke;
     border-width: 3px !important;
+
 }

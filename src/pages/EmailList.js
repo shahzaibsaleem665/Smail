@@ -13,7 +13,7 @@ import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import PeopleIcon from '@mui/icons-material/People';
 import InfoIcon from '@mui/icons-material/Info';
 import ForumIcon from '@mui/icons-material/Forum';
-import Section from './Section';
+import Section from '../components/Section';
 function EmailList() {
   return (
     <div className='emailList'>
@@ -57,6 +57,7 @@ function EmailList() {
             <Section Icon={InfoIcon} title="Updates"   selected />
             <Section Icon={ForumIcon} title="Forums"   selected />
         </div>
+
     </div>
   )
 }

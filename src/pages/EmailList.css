@@ -1,11 +1,13 @@
 .emailList {
     flex: 1;
     overflow: scroll;
+    background-color: white;
 }
 .emailList__settings { 
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;
     position: sticky;
     top: 0;
     border-bottom: 1px solid whitesmoke;
@@ -20,4 +22,8 @@
     background-color: white;
     z-index: 999;
     justify-content: space-between;
+}
+.MuiSvgIcon-root{ 
+    font-size: 20px !important;
+    color: dark gray;
 }
