@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import Mail from './components/Mail';
 import EmailList from './pages/EmailList';
+import AppBar from './pages/AppBar';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         </Route>
         <Route path='/'>   {/* This opens when a user is logged in ( Home Page) */}
           <EmailList />
+          <AppBar />
         </Route>
       </Switch>
       </div>
