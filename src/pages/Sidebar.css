@@ -1,7 +1,9 @@
 
 .sidebar { 
-    width: 18%;
-    background-color: whitesmoke;
+    flex: 0.25;
+    max-width: 220px;
+    padding-right: 20px;
+   
 }
 
 .sidebar__compose { 

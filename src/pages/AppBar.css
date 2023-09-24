@@ -4,7 +4,8 @@
     justify-content: space-around;
     height: 40%;
     align-items: center !important;
-    width: 50px;
+    padding-left: 10px;
+    
 }
 .appbar__top > .MuiSvgIcon-root { 
     color:  rgb(203, 203, 203) !important;
@@ -17,6 +18,7 @@
     justify-content: space-around;
     height: 60%;
     margin-top: -50px;
+    padding-left: 10px;
 
 }
 .appbar__bottom > .MuiIconButton-root { 
