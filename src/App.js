@@ -9,9 +9,9 @@ import {
   Link,
   
 } from "react-router-dom";
-import Mail from './components/Mail';
 import EmailList from './pages/EmailList';
 import AppBar from './pages/AppBar';
+import EmailRow from './components/EmailRow';
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
       <Sidebar />
       <Switch>   {/* Switch is not used anymore with version 6 or higher, I have chosen to use switch -- downgrade your react-router-dom version to 5 or lower. */}
         <Route path='/mail'> {/* This opens when you an email s clicked */}
-          <Mail />
+        <EmailRow />
         </Route>
         <Route path='/'>   {/* This opens when a user is logged in ( Home Page) */}
           <EmailList />

@@ -1,6 +1,6 @@
 import React from 'react'
 import "./EmailList.css"
-import { Checkbox, Icon, IconButton } from '@mui/material'
+import { Checkbox, IconButton } from '@mui/material'
 import KeyboardArrowDownSharpIcon from '@mui/icons-material/KeyboardArrowDownSharp';
 import MoreVertSharpIcon from '@mui/icons-material/MoreVertSharp';
 import RefreshSharpIcon from '@mui/icons-material/RefreshSharp';
@@ -14,6 +14,7 @@ import PeopleIcon from '@mui/icons-material/People';
 import InfoIcon from '@mui/icons-material/Info';
 import ForumIcon from '@mui/icons-material/Forum';
 import Section from '../components/Section';
+import EmailRow from '../components/EmailRow';
 function EmailList() {
   return (
     <div className='emailList'>
@@ -56,6 +57,9 @@ function EmailList() {
             <Section Icon={PeopleIcon} title="Social" selected />
             <Section Icon={InfoIcon} title="Updates"   selected />
             <Section Icon={ForumIcon} title="Forums"   selected />
+        </div>
+        <div className='emailList__list'>
+                <EmailRow title="Dummy" subject="New Message" description="This is a test" time="10PM" />
         </div>
 
     </div>
