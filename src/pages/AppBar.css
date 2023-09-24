@@ -16,5 +16,9 @@
     align-items: center;
     justify-content: space-around;
     height: 60%;
-    color: black;
+    margin-top: -50px;
+
+}
+.appbar__bottom > .MuiIconButton-root { 
+    color: black !important;
 }

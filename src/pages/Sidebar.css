@@ -1,4 +1,9 @@
 
+.sidebar { 
+    width: 18%;
+    background-color: whitesmoke;
+}
+
 .sidebar__compose { 
     margin-top: 15px !important;
     margin-bottom: 15px !important;

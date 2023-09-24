@@ -2,26 +2,31 @@
     flex: 1;
     overflow: scroll;
     background-color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    margin-top: 10px;
 }
 .emailList__settings { 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    overflow: hidden;
+    border-radius: 20px;
     position: sticky;
     top: 0;
     border-bottom: 1px solid whitesmoke;
     background: white;
     z-index: 999;
     padding-right: 10px;
+    overflow: hidden;
 }
 .emailList__sections {
     position: sticky;
     top: 0;
     display: flex;
-    background-color: white;
+    background-color: whitesmoke;
     z-index: 999;
     justify-content: space-between;
+    
 }
 .MuiSvgIcon-root{ 
     font-size: 20px !important;

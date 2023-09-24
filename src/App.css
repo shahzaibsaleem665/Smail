@@ -1,9 +1,11 @@
 .app { 
     height: 100vh;
     overflow: hidden;
+    background-color: whitesmoke;
     
 }
 .app__body { 
     display: flex;
     height: 100vh;
+
 }
