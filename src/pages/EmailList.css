@@ -32,3 +32,6 @@
     font-size: 20px !important;
     color: dark gray;
 }
+.emailList__list { 
+    background-color: whitesmoke;
+}
