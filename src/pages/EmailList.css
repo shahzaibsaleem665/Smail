@@ -5,6 +5,7 @@
     border: 2px solid white;
     border-radius: 20px;
     margin-top: 10px;
+    height: 85%;
 }
 .emailList__settings { 
     display: flex;
@@ -28,7 +29,6 @@
     justify-content: space-between;
     
 }
-
 .emailList__list { 
     background-color: whitesmoke;
 }

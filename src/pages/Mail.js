@@ -1,21 +1,25 @@
 import React from 'react'
 import './Mail.css'
-import { IconButton } from '@mui/material'
-
+import { Avatar, Icon, IconButton } from '@mui/material'
+import LaunchIcon from '@mui/icons-material/Launch';
+import LabelImportantOutlinedIcon from '@mui/icons-material/LabelImportantOutlined';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import PrintIcon from '@mui/icons-material/Print';
 import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import ReportGmailerrorredOutlinedIcon from '@mui/icons-material/ReportGmailerrorredOutlined';
-import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import WatchLaterIcon from '@mui/icons-material/WatchLater';
+import WatchLaterOutlinedIcon from '@mui/icons-material/WatchLaterOutlined';
 import AddTaskIcon from '@mui/icons-material/AddTask';
-import DriveFileMoveIcon from '@mui/icons-material/DriveFileMove';
-import LabelIcon from '@mui/icons-material/Label';
+import DriveFileMoveOutlinedIcon from '@mui/icons-material/DriveFileMoveOutlined';
+import LabelOutlinedIcon from '@mui/icons-material/LabelOutlined';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import ChevronLeftSharpIcon from '@mui/icons-material/ChevronLeftSharp';
 import ChevronRightSharpIcon from '@mui/icons-material/ChevronRightSharp';
 import KeyboardAltSharpIcon from '@mui/icons-material/KeyboardAltSharp';
 import ArrowDropDownSharpIcon from '@mui/icons-material/ArrowDropDownSharp';
+import StarOutlineIcon from '@mui/icons-material/StarOutline';
+import ReplyIcon from '@mui/icons-material/Reply';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 function Mail() {
   const history = useHistory(); 
@@ -37,14 +41,14 @@ function Mail() {
           </IconButton>
 
           <IconButton>
-            <DeleteIcon />
+            <DeleteOutlineOutlinedIcon />
           </IconButton> | 
           <IconButton>
             <MailOutlineIcon />
           </IconButton>
 
           <IconButton>
-            <WatchLaterIcon />
+            <WatchLaterOutlinedIcon />
           </IconButton>
 
           <IconButton>
@@ -52,11 +56,11 @@ function Mail() {
           </IconButton> | 
 
           <IconButton>
-            <DriveFileMoveIcon />
+            <DriveFileMoveOutlinedIcon />
           </IconButton>
 
           <IconButton>
-            <LabelIcon />
+            <LabelOutlinedIcon />
           </IconButton>
 
           <IconButton>
@@ -78,7 +82,49 @@ function Mail() {
                 </IconButton>
           </div>
         </div>
+        <div className='mail__body'>
+          <div className='mail__bodyHeader'>
+          <div className='mail__bodyHeaderLeft'>
+          <h2>Subject
+          <IconButton>
+          <LabelImportantOutlinedIcon className='mail__important' />
+          </IconButton>
+          </h2>
+          </div>
 
+          <div className='mail__bodyHeaderRight'>
+          <IconButton>
+          <PrintIcon />
+          </IconButton>
+          <IconButton>
+           <LaunchIcon />
+          </IconButton>
+          </div>
+        </div>
+
+        <div className='mail__bodyDetails'>
+        <div className='mail__bodyDetailsLeft'>
+          <Avatar />
+        <p>Title</p>
+          <p>Mail address</p>
+          </div>
+          <div className='mail__bodyDetailsRight'>
+          <p>Time</p>
+          <IconButton>
+          <StarOutlineIcon />
+          </IconButton>
+          <IconButton>
+          <ReplyIcon />
+          </IconButton>
+          <IconButton>
+            <MoreVertIcon />
+          </IconButton>
+        </div>
+        </div>
+        <div className='mail__message'>
+          This is a message 
+        </div>
+        </div>
     </div>
     
   )

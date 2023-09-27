@@ -40,6 +40,6 @@ display: inline;
 .sidebarOption--active,
 .sidebarOption--active > p,
 .sidebarOption--active > h3 {
-    background-color: #a8c7fa;
+    background-color: #d3e3fd;
     font-weight: 600 !important;
 }

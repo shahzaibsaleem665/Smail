@@ -19,15 +19,17 @@
     display: flex;
     flex: 0.7;
     align-items: center;
-    background-color: rgb(222, 234, 244);
+    background-color: #ebf1fb;
     padding: 10px;
     border-radius: 30px;
+    margin-left: 17px;
     height: 30px;
 }
 .header__middle > .MuiSvgIcon-root { 
-    color: black;
+    color: black !important;
 }
 .header__middle > input { 
+   
     border: none;
     width: 100%;
     padding: 10px;
@@ -39,5 +41,5 @@
 }
 .header__right { 
     display: flex;
-    padding-right: 20px;
+    padding-right: 12px;
 }
