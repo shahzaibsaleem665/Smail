@@ -21,6 +21,7 @@ function App() {
       <Switch>   {/* Switch is not used anymore with version 6 or higher, I have chosen to use switch -- downgrade your react-router-dom version to 5 or lower. */}
         <Route path='/mail'> {/* This opens when you an email s clicked */}
         <Mail />
+        <AppBar />
         </Route>
         <Route path='/'>   {/* This opens when a user is logged in ( Home Page) */}
           <EmailList />
