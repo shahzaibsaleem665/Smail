@@ -9,6 +9,7 @@
 .header__left {
     display: flex;
     align-items: center;
+    padding-left: 10px;
 }
 .header__left > img { 
     object-fit: contain;

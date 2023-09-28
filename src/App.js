@@ -10,6 +10,7 @@ import {
 import EmailList from './pages/EmailList';
 import AppBar from './pages/AppBar';
 import Mail from './pages/Mail';
+import SendMail from './components/SendMail';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
       <div className='app__body'>
       <Sidebar />
       <Switch>   {/* Switch is not used anymore with version 6 or higher, I have chosen to use switch -- downgrade your react-router-dom version to 5 or lower. */}
-        <Route path='/mail'> {/* This opens when you an email s clicked */}
+        <Route path='/mail'> {/* This opens when you an email is clicked */}
         <Mail />
         <AppBar />
         </Route>
@@ -29,6 +30,9 @@ function App() {
         </Route>
       </Switch>
       </div>
+  
+      <SendMail/>
+      
     </div>
     </Router>
   );

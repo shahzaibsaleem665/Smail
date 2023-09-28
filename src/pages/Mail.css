@@ -22,10 +22,7 @@
 .mail__toolsRight { 
     display: flex;
 }
-.MuiSvgIcon-root { 
-    font-size: large !important;
-    color: rgb(92, 91, 91);
-}
+
 .mail__body { 
     display: flex;
     flex-direction: column;
