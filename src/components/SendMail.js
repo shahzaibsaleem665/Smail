@@ -21,16 +21,16 @@ function SendMail() {
             <div className='sendMail__headerLeft'>
             <h4>New Message</h4>
             </div>
-            <div className='sendMail__header__Right'>
+            <div className='sendMail__headerRight'>
             <MinimizeOutlinedIcon />
             <OpenInFullOutlinedIcon />
             <CloseOutlinedIcon className='sendMail__close'/>
             </div>
         </div>
         <form>
-            <input type='text' />
-            <input type='text' />
-            <input type='text' />
+            <input type='text' placeholder='Recepients' />
+            <input type='text' placeholder='Subject' />
+            <input type='text' className='sendMail__message' />
 
             <div className='sendMail__options'>
                 <Button className='sendMail__send'>Send</Button>

@@ -1,7 +1,7 @@
 .sendMail { 
     position: absolute;
     bottom: 0px;
-    right: 50px;
+    right: 60px;
     background-color: white;
     width: 40%;
     height: 40%;
@@ -21,11 +21,67 @@
 }
 .sendMail__headerLeft { 
     color: black;
-    width: 50%;
+    flex: 0.8;
     font-family: sans-serif;
+    
+}
+.sendMail__headerLeft > h3 { 
+    font-weight: 400;
 }
 .sendMail__headerRight { 
     display: flex;
-    width: 100%;
+    flex: 0.2;
     align-items: center;
+    justify-content: space-evenly;
+
+}
+.sendMail__headerRight > .MuiSvgIcon-root { 
+    font-size: medium !important;
+    color: black;
+    stroke: black;
+}
+.sendMail > form { 
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.sendMail__send {
+    display: flex;
+    color: white !important;
+    flex: 0.3;
+    font-weight: bold !important;
+    text-transform: capitalize !important;
+    background-color: rgb(36, 49, 235) !important;
+    width: 10px !important;
+    border: 2px solid whitesmoke !important;
+    border-radius: 20px !important;
+}
+.sendMail > form > input { 
+    height: 30px;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid whitesmoke;
+    outline: none;
+}
+.sendMail__message { 
+    flex: 1;
+    flex-direction: column;
+    height: 30% !important;
+}
+.sendMail__options { 
+    display: flex;
+    flex-direction: row;
+    flex: 0.8;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2px;
+}
+.sendMail__options > .MuiSvgIcon-root { 
+    font-size: large !important;
+    color: gray !important;
+}
+.sendMail__delete  { 
+    flex: 0.2;
+    padding-left: 30px;
+
 }
