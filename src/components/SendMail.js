@@ -30,7 +30,7 @@ function SendMail() {
         <form>
             <input type='text' placeholder='Recepients' />
             <input type='text' placeholder='Subject' />
-            <input type='text' className='sendMail__message' />
+            <textarea type='text' className='sendMail__message' />
 
             <div className='sendMail__options'>
                 <Button className='sendMail__send'>Send</Button>
