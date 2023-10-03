@@ -17,6 +17,7 @@
     display: flex;
     justify-content: space-between;
     padding: 13px;
+    padding-left: 13px;
     align-items: center;
     background-color: #f6f8fc;
 }
@@ -40,6 +41,7 @@
     font-size: medium !important;
     color: black;
     stroke: black;
+    cursor: pointer;
 }
 .sendMail > form { 
     display: flex;
@@ -52,23 +54,31 @@
     flex: 0.3;
     font-weight: bold !important;
     text-transform: capitalize !important;
-    background-color: rgb(36, 49, 235) !important;
+    background-color: #0b57d0 !important;
     width: 10px !important;
     border: 2px solid whitesmoke !important;
     border-radius: 20px !important;
 }
+.sendMail__send > .MuiSvgIcon-root { 
+    padding-left: 10px;
+}
 .sendMail > form > input { 
     height: 30px;
     padding: 10px;
+    padding-left: 13px;
     border: none;
     border-bottom: 1px solid whitesmoke;
     outline: none;
 }
 .sendMail__message { 
-    width: auto;
-    height: 200px;
+    width: auto ;
+    height: 250px;
+    padding-left: 13px;
+    padding-top: 20px;
     resize: none;
     border: none;
+    outline: none;
+    font-family: sans-serif;
 }
 .sendMail__options { 
     display: flex;
@@ -77,13 +87,15 @@
     align-items: center;
     justify-content: space-evenly;
     padding: 2px;
+    margin-bottom: 10px;
 }
 .sendMail__options > .MuiSvgIcon-root { 
     font-size: large !important;
     color: black !important;
+    cursor: pointer;
 }
 .sendMail__delete  { 
-    flex: 0.2;
+    flex: 0.1;
     padding-left: 30px;
 
 }

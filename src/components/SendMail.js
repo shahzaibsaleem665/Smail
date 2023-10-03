@@ -13,6 +13,7 @@ import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
 import LockClockOutlinedIcon from '@mui/icons-material/LockClockOutlined';
 import DrawOutlinedIcon from '@mui/icons-material/DrawOutlined';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import ArrowDropDownSharpIcon from '@mui/icons-material/ArrowDropDownSharp';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 function SendMail() {
   return (
@@ -28,12 +29,14 @@ function SendMail() {
             </div>
         </div>
         <form>
-            <input type='text' placeholder='Recepients' />
+            <input type='text' placeholder='Recepients'  />
             <input type='text' placeholder='Subject' />
             <textarea type='text' className='sendMail__message' />
 
             <div className='sendMail__options'>
-                <Button className='sendMail__send'>Send</Button>
+                <Button className='sendMail__send'>Send
+                <ArrowDropDownSharpIcon />
+                </Button>
                 <FormatColorTextOutlinedIcon />
                 <AttachFileOutlinedIcon />
                 <InsertLinkOutlinedIcon />
