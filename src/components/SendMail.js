@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './SendMail.css'
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import OpenInFullOutlinedIcon from '@mui/icons-material/OpenInFullOutlined';
@@ -15,7 +15,16 @@ import DrawOutlinedIcon from '@mui/icons-material/DrawOutlined';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import ArrowDropDownSharpIcon from '@mui/icons-material/ArrowDropDownSharp';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
+
 function SendMail() {
+const [recepients, setRecepients]=useState("");
+const [subject, setSubject]=useState("");
+const [message, setMessage]=useState("");
+
+console.log(recepients);
+console.log(message);
+console.log(subject)
+
   return (
     <div className='sendMail'>
         <div className='sendMail__header'>
@@ -29,12 +38,13 @@ function SendMail() {
             </div>
         </div>
         <form>
-            <input type='text' placeholder='Recepients'  />
-            <input type='text' placeholder='Subject' />
-            <textarea type='text' className='sendMail__message' />
+            <input type='text' name='To' required={true} value={recepients} onChange={(event) => setRecepients(event.target.value)} placeholder='Recepients'  />
+            <input type='text' name='subject'  required={true} value={subject}  onChange={(event) => setSubject(event.target.value)} placeholder='Subject' />
+
+            <textarea type='text' name='message'  required={true} value={message}  onChange={(event) => setMessage(event.target.value)} className='sendMail__message' />
 
             <div className='sendMail__options'>
-                <Button className='sendMail__send'>Send
+                <Button className='sendMail__send' type='submit'>Send
                 <ArrowDropDownSharpIcon />
                 </Button>
                 <FormatColorTextOutlinedIcon />
