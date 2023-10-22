@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useDebugValue, useState } from 'react'
 import './SendMail.css'
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import OpenInFullOutlinedIcon from '@mui/icons-material/OpenInFullOutlined';
@@ -15,8 +15,13 @@ import DrawOutlinedIcon from '@mui/icons-material/DrawOutlined';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import ArrowDropDownSharpIcon from '@mui/icons-material/ArrowDropDownSharp';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
+import { useDispatch } from 'react-redux';
+import { closeSendMessage } from '../features/mailSlice';
 
 function SendMail() {
+const dispatch = useDispatch();
+
+
 const [recepients, setRecepients]=useState("");
 const [subject, setSubject]=useState("");
 const [message, setMessage]=useState("");
@@ -34,7 +39,7 @@ console.log(subject)
             <div className='sendMail__headerRight'>
             <MinimizeOutlinedIcon />
             <OpenInFullOutlinedIcon />
-            <CloseOutlinedIcon className='sendMail__close'/>
+            <CloseOutlinedIcon onClick={() => dispatch(closeSendMessage())} className='sendMail__close' />
             </div>
         </div>
         <form>

@@ -61,6 +61,7 @@
 }
 .sendMail__send > .MuiSvgIcon-root { 
     padding-left: 10px;
+    color: white !important;
 }
 .sendMail > form > input { 
     height: 30px;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import './App.css';
 import Header from './pages/Header';
 import Sidebar from './pages/Sidebar';
@@ -11,8 +12,10 @@ import EmailList from './pages/EmailList';
 import AppBar from './pages/AppBar';
 import Mail from './pages/Mail';
 import SendMail from './components/SendMail';
+import { selectSendMessageIsOpen } from './features/mailSlice';
 
 function App() {
+  const sendMessageIsOpen = useSelector(selectSendMessageIsOpen);
   return (
     <Router>
     <div className="app">
@@ -31,7 +34,7 @@ function App() {
       </Switch>
       </div>
   
-      <SendMail/>
+      {sendMessageIsOpen && <SendMail/>}
       
     </div>
     </Router>

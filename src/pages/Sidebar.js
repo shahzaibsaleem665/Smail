@@ -10,11 +10,14 @@ import SendSharpIcon from '@mui/icons-material/SendSharp';
 import DescriptionSharpIcon from '@mui/icons-material/DescriptionSharp';
 import ExpandMoreSharpIcon from '@mui/icons-material/ExpandMoreSharp';
 import AddSharpIcon from '@mui/icons-material/AddSharp';
+import { useDispatch } from 'react-redux';
+import { openSendMessage } from '../features/mailSlice';
 function Sidebar() {
+  const dispatch = useDispatch();
   return (
     <div className='sidebar'>
         <Button startIcon={<EditIcon fontSize='large'/>}
-        className='sidebar__compose' >
+        className='sidebar__compose' onClick={() => dispatch(openSendMessage())} >
         Compose        
         </Button>
         <SidebarOption Icon={InboxIcon} title="Inbox" number={50} selected={true}/>

@@ -42,7 +42,7 @@ function Mail() {
 
           <IconButton>
             <DeleteOutlineOutlinedIcon />
-          </IconButton> | 
+          </IconButton><b>|</b> 
           <IconButton>
             <MailOutlineIcon />
           </IconButton>
@@ -53,7 +53,7 @@ function Mail() {
 
           <IconButton>
             <AddTaskIcon />
-          </IconButton> | 
+          </IconButton><b>|</b> 
 
           <IconButton>
             <DriveFileMoveOutlinedIcon />

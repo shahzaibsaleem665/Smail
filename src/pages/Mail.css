@@ -8,19 +8,27 @@
 }
 .mail__tools { 
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     background-color: white;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    border-bottom: 1px solid whitesmoke;
     height: 50px;
 }
 .mail__toolsLeft  { 
     display: flex;
     align-items: center;
+    flex: 0.6;
+    justify-content: space-between;
 }
+
 
 .mail__toolsRight { 
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
 }
 
 .mail__body { 

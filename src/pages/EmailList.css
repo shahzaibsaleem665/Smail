@@ -32,3 +32,7 @@
 .emailList__list { 
     background-color: whitesmoke;
 }
+.MuiSvgIcon-root { 
+    font-size: large !important;
+    color: #616363 !important;
+}
