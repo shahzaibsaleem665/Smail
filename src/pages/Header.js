@@ -12,7 +12,7 @@ function Header() {
   return (
     <div className='header'>
         <div className='header__left'>
-        <IconButton>   {/* Icon utton is used to give the menu ICon a button like look*/}
+        <IconButton>   {/* IconButton is used to give the menu ICon a button like look*/}
             <MenuIcon />
         </IconButton>
         <img src='https://lh3.googleusercontent.com/0rpHlrX8IG77awQMuUZpQ0zGWT7HRYtpncsuRnFo6V3c8Lh2hPjXnEuhDDd-OsLz1vua4ld2rlUYFAaBYk-rZCODmi2eJlwUEVsZgg' alt='Gmail Logo' />

@@ -16,7 +16,7 @@ function Sidebar() {
   const dispatch = useDispatch();
   return (
     <div className='sidebar'>
-        <Button startIcon={<EditIcon fontSize='large'/>}
+        <Button startIcon={<EditIcon/>}
         className='sidebar__compose' onClick={() => dispatch(openSendMessage())} >
         Compose        
         </Button>

@@ -1,4 +1,4 @@
-import React, { useDebugValue, useState } from 'react'
+import React, { useState } from 'react'
 import './SendMail.css'
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import OpenInFullOutlinedIcon from '@mui/icons-material/OpenInFullOutlined';
@@ -17,6 +17,9 @@ import ArrowDropDownSharpIcon from '@mui/icons-material/ArrowDropDownSharp';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import { useDispatch } from 'react-redux';
 import { closeSendMessage } from '../features/mailSlice';
+import firebase from 'firebase/compat/app';
+import { db } from '../utilities/Firebase';
+import { collection, addDoc } from "firebase/firestore";
 
 function SendMail() {
 const dispatch = useDispatch();
@@ -27,8 +30,14 @@ const [subject, setSubject]=useState("");
 const [message, setMessage]=useState("");
 
 console.log(recepients);
-console.log(message);
-console.log(subject)
+
+const handleSubmit = () => { 
+   db.collection('EMAILS').add({
+      receiver: recepients,
+      description: subject,
+      details: message,
+    });
+  }
 
   return (
     <div className='sendMail'>
@@ -43,13 +52,13 @@ console.log(subject)
             </div>
         </div>
         <form>
-            <input type='text' name='To' required={true} value={recepients} onChange={(event) => setRecepients(event.target.value)} placeholder='Recepients'  />
+            <input type='email' name='To' required={true} value={recepients} onChange={(event) => setRecepients(event.target.value)} placeholder='Recepients'  />
             <input type='text' name='subject'  required={true} value={subject}  onChange={(event) => setSubject(event.target.value)} placeholder='Subject' />
 
             <textarea type='text' name='message'  required={true} value={message}  onChange={(event) => setMessage(event.target.value)} className='sendMail__message' />
 
             <div className='sendMail__options'>
-                <Button className='sendMail__send' type='submit'>Send
+                <Button className='sendMail__send' onClick={handleSubmit} type='submit'>Send
                 <ArrowDropDownSharpIcon />
                 </Button>
                 <FormatColorTextOutlinedIcon />
