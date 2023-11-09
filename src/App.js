@@ -11,13 +11,20 @@ import {
 import EmailList from './pages/EmailList';
 import AppBar from './pages/AppBar';
 import Mail from './pages/Mail';
+import Login from './pages/Login';
 import SendMail from './components/SendMail';
 import { selectSendMessageIsOpen } from './features/mailSlice';
+import { selectUser } from './features/userSlice';
 
 function App() {
   const sendMessageIsOpen = useSelector(selectSendMessageIsOpen);
+
+  const user = useSelector(selectUser);
   return (
     <Router>
+      {!user ? (
+        <Login />
+      ): 
     <div className="app">
       <Header />
       <div className='app__body'>
@@ -37,6 +44,7 @@ function App() {
       {sendMessageIsOpen && <SendMail/>}
       
     </div>
+    }
     </Router>
   );
 }

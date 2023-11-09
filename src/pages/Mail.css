@@ -79,7 +79,8 @@
 .mail__bodyDetailsRight { 
     display: flex;
     align-items: center;
-    color: #616363
+    color: #616363;
+    font-size: 12px;
 }
 .mail__message { 
     margin-left: 60px;
