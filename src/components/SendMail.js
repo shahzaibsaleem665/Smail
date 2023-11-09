@@ -19,7 +19,8 @@ import { useDispatch } from 'react-redux';
 import { closeSendMessage } from '../features/mailSlice';
 import firebase from 'firebase/compat/app';
 import { db } from '../utilities/Firebase';
-import { collection, addDoc } from "firebase/firestore";
+
+
 
 function SendMail() {
 const dispatch = useDispatch();
@@ -29,15 +30,18 @@ const [recepients, setRecepients]=useState("");
 const [subject, setSubject]=useState("");
 const [message, setMessage]=useState("");
 
-console.log(recepients);
-
-const handleSubmit = () => { 
-   db.collection('EMAILS').add({
-      receiver: recepients,
-      description: subject,
-      details: message,
-    });
-  }
+const handleSubmit = (event) => { 
+ 
+   db.collection('Emails').add({
+      to: recepients,
+      subject: subject,
+      message: message,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    });  
+    dispatch(closeSendMessage);
+    event.preventDefault();   //  change this as it prevents sending data to firestore. 
+   };
+ 
 
   return (
     <div className='sendMail'>

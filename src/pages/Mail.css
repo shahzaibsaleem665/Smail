@@ -49,7 +49,7 @@
 }
 
 .mail__bodyHeaderLeft > h2 { 
-    font-weight: 400;
+    font-weight: 500;
     
 }
 .mail__bodyHeaderLeft {
@@ -70,6 +70,8 @@
     display: flex;
     flex: 1;
     align-items: center;
+    font-weight: 600;
+    font-size: 14px;
 }
 .mail__bodyDetailsLeft > p {
     padding-left: 10px;
@@ -77,6 +79,7 @@
 .mail__bodyDetailsRight { 
     display: flex;
     align-items: center;
+    color: #616363
 }
 .mail__message { 
     margin-left: 60px;

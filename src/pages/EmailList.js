@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./EmailList.css"
 import { Checkbox, IconButton } from '@mui/material'
 import KeyboardArrowDownSharpIcon from '@mui/icons-material/KeyboardArrowDownSharp';
@@ -15,7 +15,23 @@ import InfoIcon from '@mui/icons-material/Info';
 import ForumIcon from '@mui/icons-material/Forum';
 import Section from '../components/Section';
 import EmailRow from '../components/EmailRow';
+import { db } from '../utilities/Firebase';
 function EmailList() {
+
+    const [emails, setEmails] = useState([]);
+
+    // code to map emails from firestore to the screen
+    useEffect (() => {
+        db.collection('Emails').orderBy('timestamp', 'desc')
+        .onSnapshot(snapshot => setEmails(snapshot.docs.map(doc => ({
+            id: doc.id,
+            data: doc.data(),
+        }))
+        )
+    );
+    }, [])
+
+
   return (
     <div className='emailList'>
         <div className='emailList__settings'>
@@ -59,8 +75,19 @@ function EmailList() {
             <Section Icon={ForumIcon} title="Forums"   selected />
         </div>
         <div className='emailList__list'>
-                <EmailRow title="Dummy" subject="New Message" description="This is a test" time="10PM" />
-                <EmailRow title="Dummy" subject="New Message" description="This is a test" time="10PM" />
+            {emails.map(({id, data: {to, subject, message, timestamp}}) => (
+                
+              <EmailRow
+                id={id}
+                key={id}
+                title={to}
+                subject={subject}
+                description={message}
+                time={new Date(timestamp?.seconds * 1000).toLocaleDateString("en-US", { month: "short", day: "2-digit" }).split('//')}
+              
+              />  
+            ))}
+                
         </div>
 
     </div>
