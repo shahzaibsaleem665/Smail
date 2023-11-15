@@ -22,8 +22,6 @@
     flex: 0.6;
     justify-content: space-between;
 }
-
-
 .mail__toolsRight { 
     display: flex;
     justify-content: space-between;
@@ -75,6 +73,11 @@
 }
 .mail__bodyDetailsLeft > p {
     padding-left: 10px;
+}
+.mail__bodyDetailsLeftEmail {
+    font-size: 12px;
+    font-weight: lighter;
+    
 }
 .mail__bodyDetailsRight { 
     display: flex;

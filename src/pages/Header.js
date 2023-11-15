@@ -8,7 +8,18 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AppsIcon from '@mui/icons-material/Apps';
 import { Avatar } from '@mui/material';
+import { useDispatch, useSelector } from 'react-redux';
+import {logout, selectUser } from '../features/userSlice';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 function Header() {
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const Logout = () => {
+    dispatch(logout);
+    history.push('/login');
+  }
   return (
     <div className='header'>
         <div className='header__left'>
@@ -38,8 +49,9 @@ function Header() {
             <IconButton>
             <AppsIcon />
             </IconButton>
-            <Avatar />
-            
+            <IconButton onClick={Logout}>
+            <Avatar className='header__avatar' src={user?.photoUrl}/>
+            </IconButton>
         </div>
     </div>
   )

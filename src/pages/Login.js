@@ -9,7 +9,7 @@ function Login() {
     const dispatch = useDispatch();
 
     const signIn = () => {
-       auth.signInWithPopup(provider)
+      auth.signInWithPopup(provider)
        .then(({user}) => {
         dispatch(login({
             displayName: user.displayName,

@@ -1,4 +1,3 @@
-import React from 'react'
 import './Sidebar.css'
 import { Button, IconButton } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
@@ -14,6 +13,7 @@ import { useDispatch } from 'react-redux';
 import { openSendMessage } from '../features/mailSlice';
 function Sidebar() {
   const dispatch = useDispatch();
+
   return (
     <div className='sidebar'>
         <Button startIcon={<EditIcon/>}
@@ -23,7 +23,7 @@ function Sidebar() {
         <SidebarOption Icon={InboxIcon} title="Inbox" number={50} selected={true}/>
         <SidebarOption Icon={StarOutlineIcon} title="Starred" number={40} />
         <SidebarOption Icon={LabelImportantIcon} title="Important" number={42} />
-        <SidebarOption Icon={SendSharpIcon} title="Sent" number={12} />
+        <SidebarOption Icon={SendSharpIcon} title="Sent" number={12}  />
         <SidebarOption Icon={DescriptionSharpIcon} title="Drafts" number={5} />
         <SidebarOption Icon={ExpandMoreSharpIcon} title="More" number={null} />
         <div className='sidebar__footer'>

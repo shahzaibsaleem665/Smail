@@ -1,5 +1,5 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import Header from './pages/Header';
 import Sidebar from './pages/Sidebar';
@@ -14,16 +14,31 @@ import Mail from './pages/Mail';
 import Login from './pages/Login';
 import SendMail from './components/SendMail';
 import { selectSendMessageIsOpen } from './features/mailSlice';
-import { selectUser } from './features/userSlice';
-
+import { login, logout, selectUser } from './features/userSlice';
+import { auth } from './utilities/Firebase';
 function App() {
   const sendMessageIsOpen = useSelector(selectSendMessageIsOpen);
-
+  const dispatch = useDispatch();
   const user = useSelector(selectUser);
+// useEffect(() => {
+//   auth.onAuthStateChanged((user) => {
+//     if (user) {
+//       dispatch(login({
+//         displayName: user.displayName,
+//         email: user.email,
+//         photoUrl: user.photoURL
+//       }))
+//     }
+//     else { 
+//       dispatch(logout);
+//     }
+//   })
+// })
+  
   return (
     <Router>
       {!user ? (
-        <Login />
+        <Login  path='/login'/>
       ): 
     <div className="app">
       <Header />

@@ -23,9 +23,11 @@ import ReplyIcon from '@mui/icons-material/Reply';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useSelector } from 'react-redux';
 import { selectOpenMail } from '../features/mailSlice';
+import { selectUser } from '../features/userSlice';
 function Mail() {
   {/* useHistory works with version 5 of react-router-dom, if you are using  latest version, useHistory is replaced with useNavigate */}
   const history = useHistory(); 
+  const user = useSelector(selectUser);
   const optedMail = useSelector(selectOpenMail);
   return (
     <div className='mail'>
@@ -107,8 +109,9 @@ function Mail() {
 
         <div className='mail__bodyDetails'>
         <div className='mail__bodyDetailsLeft'>
-          <Avatar />
-           <p>{optedMail?.title}</p>
+          <Avatar src={user?.photoUrl} />
+           <p>{user?.displayName}</p>
+           <p className='mail__bodyDetailsLeftEmail'>&lt;{user?.email}&gt;</p>
           </div>
           <div className='mail__bodyDetailsRight'>
           <p>{optedMail?.time}</p>

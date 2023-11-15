@@ -1,6 +1,5 @@
 import React from 'react'
 import './EmailRow.css'
-
 import { Checkbox, IconButton } from '@mui/material'
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import LabelImportantIcon from '@mui/icons-material/LabelImportant';
