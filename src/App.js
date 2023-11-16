@@ -7,6 +7,7 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
+  Link,
 } from "react-router-dom";
 import EmailList from './pages/EmailList';
 import AppBar from './pages/AppBar';
@@ -16,27 +17,30 @@ import SendMail from './components/SendMail';
 import { selectSendMessageIsOpen } from './features/mailSlice';
 import { login, logout, selectUser } from './features/userSlice';
 import { auth } from './utilities/Firebase';
+import Register from './pages/Register';
 function App() {
   const sendMessageIsOpen = useSelector(selectSendMessageIsOpen);
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
-// useEffect(() => {
-//   auth.onAuthStateChanged((user) => {
-//     if (user) {
-//       dispatch(login({
-//         displayName: user.displayName,
-//         email: user.email,
-//         photoUrl: user.photoURL
-//       }))
-//     }
-//     else { 
-//       dispatch(logout);
-//     }
-//   })
-// })
+  useEffect(() => {
+    auth.onAuthStateChanged(userAuth => {
+      if (userAuth) {
+        // user is logged in
+        dispatch(login({
+          email: userAuth.email,
+          displayName: userAuth.displayName,
+          photoUrl: userAuth.photoURL,
+        }))
+      } else {
+        // use is logged out
+        dispatch(logout());
+      }
+    })
+  }, [dispatch]);
   
   return (
-    <Router>
+    <Router> {/* If no user exsits, open login page otherwise homepage*/}
+
       {!user ? (
         <Login  path='/login'/>
       ): 

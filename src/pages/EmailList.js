@@ -19,7 +19,6 @@ import { db } from '../utilities/Firebase';
 function EmailList() {
 
     const [emails, setEmails] = useState([]);
-
     // code to map emails from firestore to the screen
     useEffect (() => {
         db.collection('Emails').orderBy('timestamp', 'desc')
@@ -30,8 +29,6 @@ function EmailList() {
         )
     );
     }, [])
-
-
   return (
     <div className='emailList'>
         <div className='emailList__settings'>

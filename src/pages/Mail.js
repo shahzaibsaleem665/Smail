@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Mail.css'
 import { Avatar, Icon, IconButton } from '@mui/material'
 import LaunchIcon from '@mui/icons-material/Launch';
@@ -23,12 +23,35 @@ import ReplyIcon from '@mui/icons-material/Reply';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useSelector } from 'react-redux';
 import { selectOpenMail } from '../features/mailSlice';
-import { selectUser } from '../features/userSlice';
+import { selectUser } from '../features/userSlice'
+import firebase from 'firebase/compat/app';
+import { auth, db } from '../utilities/Firebase';
 function Mail() {
   {/* useHistory works with version 5 of react-router-dom, if you are using  latest version, useHistory is replaced with useNavigate */}
   const history = useHistory(); 
   const user = useSelector(selectUser);
   const optedMail = useSelector(selectOpenMail);
+  const [collectionName, setCollectionName] = useState('Emails'); // Replace with your actual collection name
+
+  const deleteDocument = async (event) => {
+    event.preventDefault();
+    history.push('/');
+    try {
+      const querySnapshot = await firebase.firestore().collection(collectionName).get();
+
+      querySnapshot.forEach(async (doc) => {
+        // You can add your condition to identify the document to delete
+        // For example, you might check a field value or use another criterion
+        // In this example, we'll delete the first document found
+        
+          await  firebase.firestore().collection(collectionName).doc(doc.id).delete();
+
+          console.log('Document successfully deleted!');        
+      })
+    } catch (error) {
+      console.error('Error deleting document: ', error);
+    }
+  };
   return (
     <div className='mail'>
         <div className='mail__tools'>
@@ -45,8 +68,8 @@ function Mail() {
             <ReportGmailerrorredOutlinedIcon />
           </IconButton>
 
-          <IconButton>
-            <DeleteOutlineOutlinedIcon />
+          <IconButton onClick={deleteDocument}>
+            <DeleteOutlineOutlinedIcon   />
           </IconButton><b>|</b> 
           <IconButton>
             <MailOutlineIcon />

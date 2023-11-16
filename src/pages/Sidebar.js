@@ -14,17 +14,18 @@ import { openSendMessage } from '../features/mailSlice';
 function Sidebar() {
   const dispatch = useDispatch();
 
+ 
   return (
     <div className='sidebar'>
         <Button startIcon={<EditIcon/>}
         className='sidebar__compose' onClick={() => dispatch(openSendMessage())} >
         Compose        
         </Button>
-        <SidebarOption Icon={InboxIcon} title="Inbox" number={50} selected={true}/>
-        <SidebarOption Icon={StarOutlineIcon} title="Starred" number={40} />
-        <SidebarOption Icon={LabelImportantIcon} title="Important" number={42} />
-        <SidebarOption Icon={SendSharpIcon} title="Sent" number={12}  />
-        <SidebarOption Icon={DescriptionSharpIcon} title="Drafts" number={5} />
+        <SidebarOption Icon={InboxIcon} title="Inbox" number={null} />
+        <SidebarOption Icon={StarOutlineIcon} title="Starred" number={null} />
+        <SidebarOption Icon={LabelImportantIcon} title="Important" number={null} />
+        <SidebarOption Icon={SendSharpIcon} title="Sent" number={null} selected={true}/>
+        <SidebarOption Icon={DescriptionSharpIcon} title="Drafts" number={null} />
         <SidebarOption Icon={ExpandMoreSharpIcon} title="More" number={null} />
         <div className='sidebar__footer'>
             <div className='sidebar__footerLabel'>
