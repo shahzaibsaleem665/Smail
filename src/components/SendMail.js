@@ -28,6 +28,7 @@ function SendMail() {
   const [recepients, setRecepients] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
+  console.log(recepients);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -70,7 +71,7 @@ function SendMail() {
           <input
             type='email'
             name='To'
-            required={true}
+            required
             value={recepients}
             onChange={(event) => setRecepients(event.target.value)}
             placeholder='Recepients'
@@ -78,7 +79,7 @@ function SendMail() {
           <input
             type='text'
             name='subject'
-            required={true}
+            required
             value={subject}
             onChange={(event) => setSubject(event.target.value)}
             placeholder='Subject'
@@ -87,7 +88,7 @@ function SendMail() {
           <textarea
             type='text'
             name='message'
-            required={true}
+            required
             value={message}
             onChange={(event) => setMessage(event.target.value)}
             className='sendMail__message'

@@ -42,7 +42,14 @@ function App() {
     <Router> {/* If no user exsits, open login page otherwise homepage*/}
 
       {!user ? (
-        <Login  path='/login'/>
+       <Switch>
+       <Route path='/'>
+         <Login />
+       </Route>
+       <Route path='/register'>
+         <Register />
+       </Route>
+     </Switch>
       ): 
     <div className="app">
       <Header />

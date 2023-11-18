@@ -14,7 +14,6 @@ function Login() {
     const register = (event) => {
       event.preventDefault();
       history.push("/register");
-      <Link to='/register' />
     }
 
     const signIn = () => {
@@ -31,11 +30,14 @@ function Login() {
   return (
     <div className='login'>
         <div className='login__container'>
-        <img src='https://o.remove.bg/downloads/0030b900-3788-403f-b350-b27b9a6a6e40/logo-removebg-preview.png' alt='Gmail Logo' />
-        <Button  onClick={signIn}>Login using  <img src='https://lh3.googleusercontent.com/COxitqgJr1sJnIDe8-jiKhxDx1FrYbtRHKJ9z_hELisAlapwE9LUPh6fcXIfb5vwpbMl4xl9H9TRFPc5NOO8Sb3VSgIBrfRYvW6cUA' alt='text'height= '20px'/>
+        <img src='https://lh3.googleusercontent.com/0rpHlrX8IG77awQMuUZpQ0zGWT7HRYtpncsuRnFo6V3c8Lh2hPjXnEuhDDd-OsLz1vua4ld2rlUYFAaBYk-rZCODmi2eJlwUEVsZgg' alt='Gmail Logo' />
+        <Button className='login__button' onClick={signIn}>Login using  <img src='https://lh3.googleusercontent.com/COxitqgJr1sJnIDe8-jiKhxDx1FrYbtRHKJ9z_hELisAlapwE9LUPh6fcXIfb5vwpbMl4xl9H9TRFPc5NOO8Sb3VSgIBrfRYvW6cUA' alt='text'height= '20px'/>
         </Button>   
+        <Link to='/register'> 
         <Button className='login__button' onClick={register}>Login using  <img src='https://static.vecteezy.com/system/resources/previews/020/009/601/original/email-and-mail-icon-black-free-png.png' alt='text' height='25px'/>
         </Button>
+        </Link>
+  
      
  
         </div>

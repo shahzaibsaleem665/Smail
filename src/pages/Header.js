@@ -37,7 +37,7 @@ function Header() {
         <IconButton>   {/* IconButton is used to give the menu ICon a button like look*/}
             <MenuIcon />
         </IconButton>
-        <img src='https://o.remove.bg/downloads/0030b900-3788-403f-b350-b27b9a6a6e40/logo-removebg-preview.png' alt='Gmail Logo' />
+        <img src='https://lh3.googleusercontent.com/0rpHlrX8IG77awQMuUZpQ0zGWT7HRYtpncsuRnFo6V3c8Lh2hPjXnEuhDDd-OsLz1vua4ld2rlUYFAaBYk-rZCODmi2eJlwUEVsZgg' alt='Gmail Logo' />
         </div>
         <div className='header__middle'>
         <IconButton>
