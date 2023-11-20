@@ -18,6 +18,8 @@ import { selectSendMessageIsOpen } from './features/mailSlice';
 import { login, logout, selectUser } from './features/userSlice';
 import { auth } from './utilities/Firebase';
 import Register from './pages/Register';
+import LoginPage from './pages/LoginPage';
+import ForgetPassword from './pages/ForgetPassword';
 function App() {
   const sendMessageIsOpen = useSelector(selectSendMessageIsOpen);
   const dispatch = useDispatch();
@@ -43,11 +45,17 @@ function App() {
 
       {!user ? (
        <Switch>
+         <Route path='/register'>
+         <Register />
+       </Route>
+       <Route path='/loginPage'>
+         <LoginPage />
+       </Route>
+       <Route path='/forgetPassword'>
+         <ForgetPassword />
+       </Route>
        <Route path='/'>
          <Login />
-       </Route>
-       <Route path='/register'>
-         <Register />
        </Route>
      </Switch>
       ): 

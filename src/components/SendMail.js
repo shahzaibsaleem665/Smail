@@ -28,7 +28,6 @@ function SendMail() {
   const [recepients, setRecepients] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
-  console.log(recepients);
 
   const handleSubmit = (event) => {
     event.preventDefault();

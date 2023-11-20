@@ -25,8 +25,10 @@ function EmailList() {
         .onSnapshot(snapshot => setEmails(snapshot.docs.map(doc => ({
             id: doc.id,
             data: doc.data(),
+            
         }))
-        )
+        )  
+        
     );
     }, [])
   return (

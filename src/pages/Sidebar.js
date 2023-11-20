@@ -21,7 +21,7 @@ function Sidebar() {
         className='sidebar__compose' onClick={() => dispatch(openSendMessage())} >
         Compose        
         </Button>
-        <SidebarOption Icon={InboxIcon} title="Inbox" number={null} />
+        <SidebarOption Icon={InboxIcon} title="Inbox" number={null}  />
         <SidebarOption Icon={StarOutlineIcon} title="Starred" number={null} />
         <SidebarOption Icon={LabelImportantIcon} title="Important" number={null} />
         <SidebarOption Icon={SendSharpIcon} title="Sent" number={null} selected={true}/>
