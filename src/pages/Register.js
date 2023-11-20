@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import './Register.css'
 import { Button } from '@mui/material'
-import { db } from '../utilities/Firebase';
+import { auth, db } from '../utilities/Firebase';
+import { login, register } from '../features/userSlice';
+import { useDispatch } from 'react-redux';
 function Register() {
+  const dispatch = useDispatch();
 
   const [fullName, setFullName] = useState('');
   const [Email, setEmail] = useState('');
@@ -16,13 +19,23 @@ function Register() {
         return;
       }
 
-      // Add user details to Firestore, including the download URL of the profile picture
-       db.collection('users').add({
+     // Add user deails to Firestore
+     
+
+     db.collection('Users').doc((auth.createUserWithEmailAndPassword(Email, Password)).user.uid).set({
+      fullName: fullName,
+      email: Email,
+      password: Password
+     });
+    // Dispatch the user information to the Redux store
+    dispatch(
+      login({
+        id: (await auth.createUserWithEmailAndPassword(Email,Password)).user.uid,
         fullName: fullName,
         email: Email,
         password: Password
-      });
-  
+      })
+    );
 
       alert('Account created successfully');
       // You can redirect the user to another page if needed.

@@ -19,7 +19,7 @@ import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined
 import { useDispatch } from 'react-redux';
 import { closeSendMessage } from '../features/mailSlice';
 import firebase from 'firebase/compat/app';
-import { db } from '../utilities/Firebase';
+import { auth, db } from '../utilities/Firebase';
 
 function SendMail() {
   const dispatch = useDispatch();
@@ -31,12 +31,18 @@ function SendMail() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    const currentUserUid = auth.currentUser?.uid;
+    if (currentUserUid) {
     db.collection('Emails').add({
       to: recepients,
       subject: subject,
       message: message,
+      senderUid: currentUserUid,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    });
+    },
+    );
+  }
   };
 
   const toggleMinimize = () => {

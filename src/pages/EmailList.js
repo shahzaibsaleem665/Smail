@@ -15,22 +15,39 @@ import InfoIcon from '@mui/icons-material/Info';
 import ForumIcon from '@mui/icons-material/Forum';
 import Section from '../components/Section';
 import EmailRow from '../components/EmailRow';
-import { db } from '../utilities/Firebase';
+import { auth, db } from '../utilities/Firebase';
 function EmailList() {
 
     const [emails, setEmails] = useState([]);
     // code to map emails from firestore to the screen
-    useEffect (() => {
-        db.collection('Emails').orderBy('timestamp', 'desc')
-        .onSnapshot(snapshot => setEmails(snapshot.docs.map(doc => ({
-            id: doc.id,
-            data: doc.data(),
-            
-        }))
-        )  
-        
-    );
-    }, [])
+    useEffect(() => {
+
+        const currentUser = auth.currentUser;
+
+  if (!currentUser) {
+    console.log('enter data');
+    return;
+  }
+  else
+  {
+    const currentUserUid = auth.currentUser?.uid;
+    console.log('Current User UID:', currentUserUid);
+      db.collection('Emails')
+        .where('senderUid', '==', currentUserUid)
+        .orderBy('timestamp', 'desc')
+        .onSnapshot((snapshot) =>
+          setEmails(
+            snapshot.docs.map((doc) => ({
+              id: doc.id,
+              data: doc.data(),
+            }))
+          )
+        );
+        console.error('error in emails: ', Error);
+    }
+  }
+       
+      , []);
   return (
     <div className='emailList'>
         <div className='emailList__settings'>

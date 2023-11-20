@@ -20,8 +20,17 @@ function LoginPage() {
             return;
           }
     
-          // Sign in with email and password
-          await auth.signInWithEmailAndPassword(Email, Password);
+         // Sign in with email and password
+      const userCredential = await auth.signInWithEmailAndPassword(Email, Password);
+
+      // Dispatch the user information to the Redux store
+      dispatch(
+        login({
+          displayName: userCredential.user.displayName,
+          email: userCredential.user.email,
+          photoUrl: userCredential.user.photoURL,
+        })
+      );
     
           alert('Sign in successful');
           // You can redirect the user to another page if needed.
