@@ -43,3 +43,8 @@ display: inline;
     background-color: #d3e3fd;
     font-weight: 600 !important;
 }
+
+&--active {
+    background-color: #f3f3f3;
+    font-weight: bold;
+  }

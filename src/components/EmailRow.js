@@ -6,11 +6,14 @@ import LabelImportantIcon from '@mui/icons-material/LabelImportant';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useDispatch } from 'react-redux';
 import { selectMail } from '../features/mailSlice';
-function EmailRow({ id, title, subject, description, time}) {
+function EmailRow({ id, title, subject, description, time, onIconClick}) {
     const history = useHistory();
     const dispatch = useDispatch();
 
-    const openMail = () => {
+    const openMail = (e) => {
+        const isCheckboxOrStar = e.target.closest('.emailRow__options');
+        if (!isCheckboxOrStar)
+        {
         dispatch(selectMail({
             id, 
             title,
@@ -21,15 +24,16 @@ function EmailRow({ id, title, subject, description, time}) {
         );
         history.push('/mail')
     }
+};
   return (
-    <div className='emailRow' onClick={openMail}>
-        <div className='emailRow__options'>
-            <Checkbox />
+    <div className='emailRow' onClick={openMail} >
+        <div className='emailRow__options' >
+            <Checkbox onClick={() => onIconClick && onIconClick(id)} />
             <IconButton>
-                <StarOutlineIcon />
+                <StarOutlineIcon onClick={() => onIconClick && onIconClick(id)} />
             </IconButton>
             <IconButton>
-                <LabelImportantIcon />
+                <LabelImportantIcon onClick={() => onIconClick && onIconClick(id)} />
             </IconButton>
         </div>
 

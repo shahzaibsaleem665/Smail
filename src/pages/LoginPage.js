@@ -30,11 +30,7 @@ function LoginPage() {
           email: userCredential.user.email,
           photoUrl: userCredential.user.photoURL,
         })
-      );
-    
-          alert('Sign in successful');
-          // You can redirect the user to another page if needed.
-    
+      );    
         } catch (error) {
           console.error('Error signing in: ', error);
           alert('Invalid credentials. Please try again.');

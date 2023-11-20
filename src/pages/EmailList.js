@@ -16,8 +16,10 @@ import ForumIcon from '@mui/icons-material/Forum';
 import Section from '../components/Section';
 import EmailRow from '../components/EmailRow';
 import { auth, db } from '../utilities/Firebase';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../features/userSlice';
 function EmailList() {
-
+  const user = useSelector(selectUser);
     const [emails, setEmails] = useState([]);
     // code to map emails from firestore to the screen
     useEffect(() => {
@@ -33,8 +35,7 @@ function EmailList() {
     const currentUserUid = auth.currentUser?.uid;
     console.log('Current User UID:', currentUserUid);
       db.collection('Emails')
-        .where('senderUid', '==', currentUserUid)
-        .orderBy('timestamp', 'desc')
+        .where('senderUid', '==', currentUserUid)      
         .onSnapshot((snapshot) =>
           setEmails(
             snapshot.docs.map((doc) => ({
@@ -96,7 +97,7 @@ function EmailList() {
               <EmailRow
                 id={id}
                 key={id}
-                title={to}
+                title={user?.displayName}
                 subject={subject}
                 description={message}
                 time={new Date(timestamp?.seconds * 1000).toLocaleDateString("en-US", { month: "short", day: "2-digit" }).split('//')}
