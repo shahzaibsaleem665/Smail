@@ -25,7 +25,7 @@ function Register() {
      
 
      db.collection('Users').add({
-      fullName: fullName,
+      displayName: fullName,
       email: Email,
       password: Password,
       photoUrl: ''

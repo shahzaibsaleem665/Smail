@@ -1,10 +1,14 @@
+.appbar {
+    display: flex;
+    flex-direction: column;
+    width: 60px;
+}
 .appbar__top { 
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     height: 40%;
     align-items: center !important;
-    padding-left: 10px;
     margin-top: 10px;
     
 }
@@ -19,6 +23,5 @@
     justify-content: space-between;
     height: 45%;
     padding-top: 5px;
-    padding-left: 10px;
 
 }

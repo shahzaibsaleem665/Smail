@@ -9,7 +9,6 @@ import ChevronRightSharpIcon from '@mui/icons-material/ChevronRightSharp';
 function AppBar() {
   return (
     <div className='appbar'>
-
         <div className='appbar__top'>
         <IconButton>
     <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Calendar_icon_%282020%29.svg/1024px-Google_Calendar_icon_%282020%29.svg.png' height="20px"/>

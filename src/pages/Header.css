@@ -39,8 +39,7 @@
 }
 .header__right { 
     display: flex;
-    width: fit-content;
-    flex: 0.2;
+    width: 200px;
     align-items: center;
     justify-content: space-evenly;
 }
